@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "198567912627",
+    "project_id": "livestock-track",
+    "storage_bucket": "livestock-track.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198567912627:android:d180f8a0ac987fc10b3cc6",
+        "android_client_info": {
+          "package_name": "com.example.livestock_sms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198567912627-i09msnosgtf5pg49d6alqpnlsk451k63.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4pidO_nBWE5iMEgA-2bKgeRWu5j5_Zhc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "198567912627-i09msnosgtf5pg49d6alqpnlsk451k63.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
