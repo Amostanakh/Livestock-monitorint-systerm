@@ -35,9 +35,13 @@ class AuthController extends GetxController {
       data = {
         "email": signedInUser.user!.email,
         "uid": signedInUser.user!.uid,
+        "username": userName.text,
+        "Phonenumber": userPhoneNumber.text,
+        "homeAddress": homeAddress.text,
       };
       kUser.value = UserModel.fromJson(data);
-      UserManagement().storeNewUser(signedInUser.user, context);
+      UserManagement().storeNewUser(signedInUser.user, context, userName.text,
+          userPhoneNumber.text, homeAddress.text);
       //  isLoading.value = false;
     }).catchError((e) {
       Get.defaultDialog(
@@ -155,8 +159,7 @@ class AuthController extends GetxController {
         .doc(kUser.value?.uid)
         .collection('myLivestocks')
         .add(livestockData)
-        .then((value) => Get.snackbar(
-            'Livestock Successfully Added', 'check to your Animal list'));
+        .then((value) => Get.snackbar('Alert', 'Livestock Successfully Added'));
 
     await Get.off(const Search());
     // isLoading.value = false;

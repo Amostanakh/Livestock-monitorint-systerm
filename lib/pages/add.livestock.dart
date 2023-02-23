@@ -18,51 +18,43 @@ class AddLiveStock extends GetView<AuthController> {
       appBar: AppBar(
         title: const Text('Add Livestock'),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/cow2.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: SafeArea(
-          child: ListView(
-            children: [
-              TextFormFilds(
-                  hintText: "Phone Number", controller: controller.phoneNumber),
-              TextFormFilds(
-                  hintText: "Tag. No", controller: controller.tagNumber),
-              DateTextFormFilds(
-                controller: controller.dateOfBirth,
-                hintText: "Date of Birth",
-              ),
-              DateTextFormFilds(
-                  hintText: "Date of entry on the Farm",
-                  controller: controller.dateofEntryonFarm),
-              TextFormFilds(
-                  hintText: "Mothers Tag", controller: controller.mothersTag),
-              Obx(
-                () => Btton(
-                  text: controller.isLoading.value
-                      ? const Center(
-                          child: CircularProgressIndicator(
-                          color: Colors.black,
-                        ))
-                      : const Center(
-                          child: Text(
-                            'Add',
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(fontSize: 15.0, color: Colors.white),
-                          ),
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.all(15),
+          children: [
+            TextFormFilds(
+                hintText: "Phone Number", controller: controller.phoneNumber),
+            TextFormFilds(
+                hintText: "Tag. No", controller: controller.tagNumber),
+            DateTextFormFilds(
+              controller: controller.dateOfBirth,
+              hintText: "Date of Birth",
+            ),
+            DateTextFormFilds(
+                hintText: "Date of entry on the Farm",
+                controller: controller.dateofEntryonFarm),
+            TextFormFilds(
+                hintText: "Mothers Tag", controller: controller.mothersTag),
+            Obx(
+              () => Btton(
+                text: controller.isLoading.value
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                        color: Colors.black,
+                      ))
+                    : const Center(
+                        child: Text(
+                          'Add',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 15.0, color: Colors.white),
                         ),
-                  onTap: () async {
-                    controller.addLiveStockData();
-                  },
-                ),
+                      ),
+                onTap: () async {
+                  controller.addLiveStockData();
+                },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

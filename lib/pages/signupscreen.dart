@@ -5,6 +5,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:livestock_sms/controller/authentication.dart';
+import 'package:livestock_sms/pages/home.screen.dart';
 import 'package:livestock_sms/pages/loginscreen.dart';
 import 'package:livestock_sms/widgets/inputs.dart';
 
@@ -17,16 +18,57 @@ class SignUpScreen extends GetView<AuthController> {
   Widget build(BuildContext context) {
     Get.put(AuthController());
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/cow2.jpg"),
-            fit: BoxFit.cover,
-          ),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: const Center(child: Text("Register")),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: ListView(
+          padding: const EdgeInsets.only(top: 70),
           children: [
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    "Live",
+                    style:
+                        TextStyle(fontSize: 30, fontWeight: FontWeight.normal),
+                  ),
+                  Text(
+                    "stock",
+                    style: TextStyle(
+                        color: Colors.orange,
+                        fontSize: 30,
+                        fontWeight: FontWeight.normal),
+                  ),
+                  Text(
+                    "Antitheft",
+                    style:
+                        TextStyle(fontSize: 30, fontWeight: FontWeight.normal),
+                  ),
+                ],
+              ),
+            ),
+            const Divider(
+              indent: 20,
+              endIndent: 20,
+              thickness: 1,
+              color: Colors.black,
+            ),
+            const Center(
+                child: Text(
+              "Protecting Your Livestock",
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            )),
+            const SizedBox(
+              height: 12,
+            ),
+            TextFormFilds(hintText: "Name", controller: controller.userName),
+            TextFormFilds(
+                hintText: "PhoneNumber",
+                controller: controller.userPhoneNumber),
+            TextFormFilds(
+                hintText: "Address", controller: controller.homeAddress),
             EmailText(
                 controller: controller.emailController, hintText: 'Email'),
             PasswordText(
@@ -48,29 +90,27 @@ class SignUpScreen extends GetView<AuthController> {
                       ),
                 onTap: () async {
                   controller.signup(context);
+                  //Get.to(const MyHomePage());
                 },
               ),
             ),
-            GestureDetector(
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const Text(
+                "Already have an account-",
+                style: TextStyle(color: Colors.black),
+              ),
+              GestureDetector(
                 onTap: () => Get.to(const LoginScreen()),
                 child: const Text(
-                  "Already have an account Sign-In",
-                  style: TextStyle(color: Colors.white),
-                )),
+                  "Login",
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontSize: 15,
+                  ),
+                ),
+              )
+            ]),
           ],
-        ),
-      ),
-
-      //TextFormFilds(hintText: "Name", controller: controller.userName),
-      //     child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: [
-      //         // TextFormFilds(hintText: "Name", controller: controller.userName),
-      //         // TextFormFilds(
-      //         //     hintText: "userPhoneNumber",
-      //         //     controller: controller.userPhoneNumber),
-      //         // TextFormFilds(
-      //         //     hintText: "homeAddressr", controller: controller.homeAddress),
-    );
+        ));
   }
 }

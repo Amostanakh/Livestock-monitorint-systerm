@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.livestock_sms">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
    <application
-        android:label="livestock_sms"
+        android:label="Lats Mobile"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

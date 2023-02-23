@@ -16,7 +16,7 @@ class UserGuide extends GetView<AuthController> {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            "READ THIS DOCUMENT TO UNDERSTAND MORE",
+            "",
             maxLines: 1,
             softWrap: true,
             style: TextStyle(
@@ -25,7 +25,7 @@ class UserGuide extends GetView<AuthController> {
                 fontWeight: FontWeight.bold),
           ),
         ),
-        body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        body: ListView(children: [
           GestureDetector(
             // onTap: () => Get.to(() => const ForgotPassword()),
             child: Container(
@@ -61,9 +61,11 @@ class UserGuide extends GetView<AuthController> {
               ),
             ),
           ),
+          const SizedBox(height: 5),
           GestureDetector(
             onTap: () {
               List<String> recipents = ['0771894989'];
+              // ignore: no_leading_underscores_for_local_identifiers
               void _sendSMS(String message, List<String> recipents) async {
                 String result =
                     await sendSMS(message: message, recipients: recipents)
@@ -106,6 +108,7 @@ class UserGuide extends GetView<AuthController> {
               ),
             ),
           ),
+          const SizedBox(height: 5),
           GestureDetector(
             // onTap: () => Get.to(() => const ForgotPassword()),
             child: Container(

@@ -5,7 +5,6 @@ import 'package:livestock_sms/controller/authentication.dart';
 import 'package:livestock_sms/pages/add.livestock.dart';
 import 'package:livestock_sms/pages/delete.account.dart';
 import 'package:livestock_sms/pages/list.livestock.dart';
-import 'package:livestock_sms/pages/loginscreen.dart';
 import 'package:livestock_sms/pages/user.guide.dart';
 import 'package:pattern_formatter/pattern_formatter.dart';
 
@@ -109,9 +108,8 @@ class EmailText extends StatelessWidget {
               }
             },
             decoration: InputDecoration(
-              border: UnderlineInputBorder(
+              border: const OutlineInputBorder(
                 borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(50),
               ),
               filled: true,
               fillColor: Colors.grey.withOpacity(0.25),
@@ -150,9 +148,8 @@ class PasswordText extends StatelessWidget {
               }
             },
             decoration: InputDecoration(
-              border: UnderlineInputBorder(
+              border: const OutlineInputBorder(
                 borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(50),
               ),
               filled: true,
               fillColor: Colors.grey.withOpacity(0.25),
@@ -179,8 +176,7 @@ class Btton extends StatelessWidget {
         height: 40,
         width: double.infinity,
         decoration: BoxDecoration(
-            color: const Color(0xFF8FA93A),
-            borderRadius: BorderRadius.circular(20)),
+            color: Colors.orange, borderRadius: BorderRadius.circular(10)),
         child: text,
       ),
     );
@@ -245,7 +241,6 @@ class DateTextFormFilds extends StatelessWidget {
             decoration: InputDecoration(
               border: const OutlineInputBorder(
                 borderSide: BorderSide.none,
-                // borderRadius: BorderRadius.all(),
               ),
               filled: true,
               fillColor: Colors.grey.withOpacity(0.25),

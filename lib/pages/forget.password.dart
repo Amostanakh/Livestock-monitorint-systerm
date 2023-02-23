@@ -15,39 +15,34 @@ class ForgetPassword extends GetView<AuthController> {
   Widget build(BuildContext context) {
     Get.put(AuthController());
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/cow2.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            EmailText(
-                controller: controller.emailController, hintText: 'Email'),
-            Obx(
-              () => Btton(
-                text: controller.isLoading.value
-                    ? const Center(
-                        child: CircularProgressIndicator(
-                        color: Colors.black,
-                      ))
-                    : const Center(
-                        child: Text(
-                          'Reset',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 15.0, color: Colors.white),
-                        ),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const Center(child: Text("Reset Password")),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          EmailText(controller: controller.emailController, hintText: 'Email'),
+          Obx(
+            () => Btton(
+              text: controller.isLoading.value
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                      color: Colors.black,
+                    ))
+                  : const Center(
+                      child: Text(
+                        'Reset',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 15.0, color: Colors.white),
                       ),
-                onTap: () async {
-                  controller.forgetpassword();
-                },
-              ),
+                    ),
+              onTap: () async {
+                controller.forgetpassword();
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

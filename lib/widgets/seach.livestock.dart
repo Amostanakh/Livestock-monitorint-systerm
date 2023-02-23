@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../config/configuring.dart';
 
@@ -59,9 +58,6 @@ class _SearchState extends State<Search> {
                 .collection('myLivestocks')
                 .snapshots(),
             builder: (context, snapshots) {
-              print(snapshots.data);
-
-              print("jkkrekjreerk");
               return (snapshots.connectionState == ConnectionState.waiting)
                   ? const Center(
                       child: CircularProgressIndicator(),
