@@ -34,10 +34,7 @@ class AdminDrawer extends StatelessWidget {
             'Special case',
             style: TextStyle(fontSize: 15.0),
           ),
-          // onTap: () => Get.to(LivestockDetails(
-          //   chatRoomId: 'jhiho',
-          //   userMap: {'jhgh': 'ghgghgh'},
-          // )),
+         
         ),
         ListTile(
           onTap: () => Get.to(const AddAnimal()),
